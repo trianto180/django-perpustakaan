@@ -4,6 +4,10 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
+                <h3>
+                    Data buku
+                    <a href="{% url 'tambah_buku' %}">Tambah</a>
+                </h3>
                 <table class="table table-bordered table-striped">
                     <thead>
                         <th>Judul</th>
@@ -15,7 +19,7 @@
                     <tbody>
                     {% for buku in books %}
                     <tr>
-                        <td>{{ buku.judul }}</td>
+                        <td><a href="{% url 'ubah_buku' buku.id %}">{{ buku.judul }}</a></td>
                         <td>{{ buku.penulis }}</td>
                         <td>{{ buku.penerbit }}</td>
                         <td>{{ buku.jumlah }}</td>
