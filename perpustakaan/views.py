@@ -3,7 +3,12 @@ from perpustakaan.models import Buku
 from perpustakaan.forms import FormBuku
 
 def buku(request):
-    books = Buku.objects.all()
+    # books = Buku.objects.all()
+    #menampilkan buku jumla 32
+    books = Buku.objects.filter(jumlah=32)
+
+    #menampilkan buku sesuai kategori, [:1/2] untuk melimit jumlah yang ditampilkan
+    books = Buku.objects.filter(kelompok_id__nama='produktif')[:1]
 
     konteks = {
         'books': books,
